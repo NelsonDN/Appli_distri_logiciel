@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title> Compte Administrateur</title>
+    <style>
+        h1 {background:linear-gradient(to right,#4f93ce,#1273de,#1c8cd1,#43a2d9,#1e96c8)
+            -webkit-background-clip:text
+            -webkit-text-fill-color:transparent;
+            font-weight;bold;
+        }
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page de connexion</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+    
+    .container {
+        width: 400px;
+        margin: 50px auto;
+        padding: 30px;
+        background-color: #fff;
+        border-radius: 25px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    .champ {
+        margin-bottom: 15px;
+    }
+    
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    
+    input[type="text"],
+    input[type="password"],
+    input[type="email"]  {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+    }
+    
+    button[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        justify-content: space-between;
+    }
+    
+    #messageErreur {
+        color: red;
+        text-align: center;
+        margin-top: 10px;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>Compte Administrateur</h1>
+        <form id="formulaireConnexion">
+            <div class="champ">
+                <label for="nomUtilisateur">Nom :</label>
+                <input type="text" id="nomUtilisateur" name="nomUtilisateur" required>
+            </div>
+            <div class="champ">
+                <label for="prénomUtilisateur">Prénom :</label>
+                <input type="text" id="prénomUtilisateur" name="prénomUtilisateur" required>
+            </div>
+            <div class="champ">
+                <label for="numerotéléphone">Numero de téléphone :</label>
+                <input type="text" id="numerotéléphone" name="numerotéléphone" required>
+            </div>
+            <div class="champ">
+                <label for="motDePasse">Mot de passe :</label>
+                <input type="password" id="motDePasse" name="motDePasse" required>  
+            </div>
+            <div class="champ">
+                <label for="email">E-mail :</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <button type="submit">Se connecter</button>
+            <button class="btn btn-light">Cancel</button>
+        </form>
+        <p id="messageErreur"></p>
+    </div>
+</body>
+</html>

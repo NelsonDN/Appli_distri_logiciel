@@ -1,0 +1,11 @@
+gerer l'authentification
+    creation
+    connexion
+
+gerer les composants
+    creer
+    lister
+    details
+    commentaires
+    telecharger
+    avis

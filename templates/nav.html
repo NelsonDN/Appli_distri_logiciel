@@ -1,0 +1,17 @@
+<nav id="navbar" class="navbar">
+    <ul>
+      <li><a class="nav-link scrollto {% if request.endpoint == 'accueil' %}active{% endif %}" href="/">Accueil</a></li>
+      <li><a class="nav-link scrollto {% if request.endpoint == 'outils' %}active{% endif %} " href="outils">Outils</a></li>
+      <li><a class="nav-link scrollto {% if request.endpoint == 'téléchargement' %}active{% endif %}" href="téléchargement">Téléchargement</a></li>
+      {% if current_user.type == "D" %}
+      <li><a class="nav-link scrollto {% if request.endpoint == 'composants_list' %}active{% endif %}" href="composants_list">Composants</a></li>
+      {% endif %}
+      {% if current_user.is_authenticated %}
+        <li><a class="nav-link scrollto" href="/logout">Déconnexion</a></li>
+      {% else %}
+        <li><a class="nav-link scrollto {% if request.endpoint == 'Seconnecter' %}active{% endif %}" href="Seconnecter">Se connecter</a></li>
+      {% endif %}
+      <!-- <li><a class="nav-link scrollto active" href="Seconnecter">Se connecter</a></li> -->
+    </ul>
+    <i class="bi bi-list mobile-nav-toggle"></i>
+  </nav><!-- .navbar -->

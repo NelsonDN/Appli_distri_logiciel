@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>OpenQDA website</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{{ url_for('static', filename='img/logo site2.png') }}" rel="icon">
+  <link href="{{ url_for('static', filename='img/logo site2.png') }}" rel="logo site2">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{ url_for('static', filename='vendor/aos/aos.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+
+  <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const payantCheckbox = document.getElementById('payant');
+        const prixInput = document.getElementById('prix');
+
+        // Cache le champ prix au chargement de la page
+        prixInput.style.display = payantCheckbox.checked ? 'block' : 'none';
+        prixInput.disabled = !payantCheckbox.checked;
+
+        // Ajoute un écouteur d'événement pour le changement de la case à cocher "payant"
+        payantCheckbox.addEventListener('change', function () {
+            // Affiche ou cache le champ prix en fonction de l'état de la case à cocher
+            prixInput.style.display = this.checked ? 'block' : 'none';
+            // Active ou désactive le champ prix en fonction de l'état de la case à cocher
+            prixInput.disabled = !this.checked;
+        });
+    });
+</script>
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex justify-content-between">
+
+      <div class="logo">
+        <h1><a href="{{ url_for('temp', page='index') }}">OpenQDA</a></h1>
+      </div>
+
+      {% include 'nav.html' %}
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+<section id="contact" class="contact">
+    <div class="mt-5 container">
+        <div class="row mt-5 justify-content-center" data-aos="fade-up">
+          <div class="col-lg-6 mt-5">
+            <h2>Ajouter un Composant</h2>
+            <form action="{{ url_for('ajouter') }}" class="mt-1" method="post" enctype="multipart/form-data" role="form">
+              <div class="form-group mt-1">
+                <input type="text" name="nom" class="form-control" placeholder="Nom du composant" required>
+              </div>
+              <div class="form-group mt-1">
+                <input type="text" name="desc" class="form-control" placeholder="Description du composant" required>
+              </div>
+              <div class="form-group mt-1">
+                <input type="text" name="version" class="form-control" placeholder="Version du composant" required>
+              </div>
+              <div class="form-group mt-1">
+                <input type="text" name="icon" class="form-control" placeholder="Icon du composant" required>
+              </div>
+              <div class="form-group mt-1">
+                <input type="text" name="nom_os" class="form-control" placeholder="Systeme d'exploitation" required>
+              </div>
+              <div class="form-group mt-1">
+                <input type="text" name="version_os" class="form-control" placeholder="Version OS" required>
+              </div>
+              <div class="form-group">
+                <label for="setup">Uploader le fichier setup (.exe):</label>
+                <input type="file" name="setup" class="form-control-file">
+              </div>
+              <div class="form-group mt-2">
+                <label for="payant">Payant:</label>
+                <input type="checkbox" name="payant" id="payant">
+              </div>
+              <div class="form-group mt-2">
+                <input type="number" name="prix" id="prix" class="form-control" placeholder="Prix du composant">
+              </div>
+              <button type="submit" class="btn btn-success mt-5">Enregistrer</button>
+            </form>
+          </div>
+        </div>
+      </div>
+</section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+              <h3>OpenQDA</h3>
+              <p>
+                Campus 2 <br>
+                Douala/Cameroun<br><br>
+                <strong>Phone:</strong> +237 656325296<br>
+                <strong>Email:</strong> fleurondjigyedji@gmail.com<br>
+              </p>
+              <div class="social-links mt-3">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+          <!--
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>-->
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Nos Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Our Newsletter</h4>
+            <!--<p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>-->
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>OpenQDA</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{{ url_for('static', filename='vendor/aos/aos.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/glightbox/js/glightbox.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/php-email-form/validate.js') }}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+
+</html>

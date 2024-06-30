@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Comments</title>
+    <style> 
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding:0;
+            background-color: #f4f4f4;
+          }
+
+          .container {
+            width: 400px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    
+          h1 {
+            text-align: center;
+            margin-bottom: 20px;
+          }
+          
+          .comment {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+          }
+          
+          .comment p {
+            margin-bottom: 15px;
+          }
+          
+          .comment small {
+            color: #aaa;
+            font-size: 12px;
+          }
+          
+          h2 {
+            margin-top: 20px;
+            margin-bottom: 10px;
+          }
+          
+          form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+          }
+          
+          form textarea,
+          form input[type="text"],
+          form input[type="number"] {
+            width: 100%;
+            padding:15px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            margin-bottom: 10px;
+          }
+          
+          form button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            justify-content: end;
+            
+
+          }
+
+          
+          
+
+    </style>
+    </head> 
+<body>
+    <section id="comment" class="comment">
+    <div class="container">
+
+    <h1>Comment</h1>
+    <form id="comment-form"method="POST">
+    <div class="form-group mt-6">
+        <input type="text" name="author_name" placeholder="your name"required >
+    </div>  
+    <div class="form-group mt-6">
+       <textarea name="content" placeholder="your comment"></textarea>
+    </div>
+    <div class="form-group mt-6">
+        <input type="number" class="form-control" id="rating" name="rating" min="1" max="5" placeholder="rating" required> 
+    </div>
+    <div class="form-group mt-3">
+        <button type="submit">Soumit</button>
+    </div>   
+
+    </form>
+</body>
+</html>    

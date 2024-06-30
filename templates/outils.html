@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>OpenQDA website</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{{ url_for('static', filename='img/logo site2.png') }}" rel="icon">
+  <link href="{{ url_for('static', filename='img/logo site2.png') }}" rel="logo site2">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{ url_for('static', filename='vendor/aos/aos.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/fontawesome/all.min.css') }}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Maxim
+  * Template URL: https://bootstrapmade.com/maxim-free-onepage-bootstrap-theme/
+  * Updated: Mar 17 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex justify-content-between">
+
+      <div class="logo">
+        <h1><a href="{{ url_for('temp', page='index') }}">OpenQDA</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="{{ url_for('temp', page='index') }}"><img src="{{ url_for('static', filename='img/logo.png') }}" alt="" class="img-fluid"></a>-->
+      </div>
+
+      {% include 'nav.html' %}
+
+    </div>
+  </header><!-- End Header -->
+
+ 
+
+  <main id="main">
+
+<!-- ======= Contact Section ======= -->
+<section id="contact" class="contact">
+  <div class="container">
+
+    <!--
+    <div class="section-title" data-aos="fade-up">
+      <h2>Contact</h2>
+      <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+    </div>
+
+    <div class="row no-gutters justify-content-center" data-aos="fade-up">
+
+      <div class="col-lg-5 d-flex align-items-stretch">
+        <div class="info">
+          <div class="address">
+            <i class="bi bi-geo-alt"></i>
+            <h4>Location:</h4>
+            <p>Campus 2, ENSET , Douala/Cameroun</p>
+          </div>
+
+          <div class="email mt-4">
+            <i class="bi bi-envelope"></i>
+            <h4>Email:</h4>
+            <p>fleurondjigyedji@gmail.com</p>
+          </div>
+
+          <div class="phone mt-4">
+            <i class="bi bi-phone"></i>
+            <h4>Call:</h4>
+            <p>+237 656325296</p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="col-lg-5 d-flex align-items-stretch">
+        <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe>
+      </div>
+
+    </div>
+    -->
+
+    <!-- -->
+
+  </div>
+</section><!-- End Contact Section -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services section-bg">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Listes Outils</h2>
+        </div>
+
+        <form action="" method="post" class='form-inline row p-4'>
+          <center><input type="text" name="email" class="col-lg-4" data-aos="fade-up">
+          <input type="submit" value="Réchercher" class="col-lg-2 btn btn-success" data-aos="fade-up"></center>
+        </form>
+
+        <div class="row">
+        {% for composant in composants %}
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up">
+            <div class="icon-box icon-box-cyan">
+              <div class="icon"><i class="{{ composant.icon }}"></i></div>
+              <h4 class="title"><a href="">{{ composant.nom }}</a></h4>
+              <p class="description"> {{ composant.desc }}</p>
+              {% if composant.payant %}
+              <p class="description badge text-danger">Payant</p>
+              {% else %}
+              <p class="description badge text-danger">Gratuit</p>
+              {% endif %} <br>
+
+              {% if current_user.type == "C" %}
+                <a href="{{ url_for('Avis') }}" class="btn btn-info">Evaluer</a>
+              {% endif %} 
+
+              <a href="{{ url_for('details', id=composant.id) }}" class="btn btn-secondary">Détails</a>
+
+              {% if composant.chemin_setup and not composant.payant %}
+                {% set filename = composant.chemin_setup.split('/')[-1] %}
+                <a href="{{ url_for('download_setup', filename=filename) }}" class="btn btn-success">Télécharger</a>
+              {% else %}
+                <a href="{{ url_for('formulaire_paiement') }}" class="btn btn-success">Télécharger</a>
+              {% endif %}
+              <!-- <a href="{{ url_for('download_setup', filename=composant.chemin_setup.split('/')[-1]) }}" class="btn btn-success">Télécharger</a> -->
+              <!-- <button class="btn btn-success">Télécharger</button> -->
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+              <h3>OpenQDA</h3>
+              <p>
+                Campus 2 <br>
+                Douala/Cameroun<br><br>
+                <strong>Phone:</strong> +237 656325296<br>
+                <strong>Email:</strong> fleurondjigyedji@gmail.com<br>
+              </p>
+              <div class="social-links mt-3">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+          <!--
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>-->
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Nos Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Our Newsletter</h4>
+            <!--<p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>-->
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>OpenQDA</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/maxim-free-onepage-bootstrap-theme/ -->
+        <!--Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>-->
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{{ url_for('static', filename='vendor/aos/aos.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/glightbox/js/glightbox.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/php-email-form/validate.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/fontawesome/fontawesome.min.js') }}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+
+</html>

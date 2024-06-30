@@ -1,0 +1,25 @@
+Comme je disais pour l'interface de développeur et le chercheur c'est la même chose,la seule chose qui différencie 
+c'est les boutons tels que (détail, évaluer, télécharger) pour le chercheur 
+et (ajouter, modifier, supprimer pour le développeur ).
+Je vais voir et je te tiendrai au courant
+
+le chercheur doit avoir un compte absolument, sans compte,
+il ne peut pas télécharger un outil payant ni outils gratuits
+
+La page du menu outils multipli par deux, pour le chercheur et le développeur.
+Si le développeur se connecte il verra les outils en bas de chaque outil,
+il y'aura un bouton d'ajouter ( ajouter l'outil je préfère lorsque le développeur clique sur ça 
+il y'aura un petit formulaire pour faire entrer la description,la compatibilité,la version et taille et autre espace ,
+ lorsqu'il clique ça oriente directement dans le disque de stockage de la machine il choisit le setup de l'outil) 
+ l'outil,un bouton de modifier( modifier l'outil,si le développeur remarque qu'il y'a les avis  des chercheurs 
+ à travers les notations et les commentaires sur certaines fonctionnalités,il vient il modifier ça et faire la mise à 
+ jour) ,un bouton pour supprimer( si l'outil ne sert à rien)
+
+Pour le chercheur alors sur le menu outils,il y'aura 4 outils avec les boutons suivant détails ( concernant les détails
+de l'outil tels que description, compatible avec quel système, version etc... Que le développeur a fait stocké dans la
+base de données),le bouton évaluer ( si le chercheur a déjà eu à télécharger l'outil s'il constate que l'outil à les 
+bugs il écrit son nom de compte créé, commentaires et notation, cela permet au développeur de faire la mise à jour de
+l'outil à chaque fois) et le bouton télécharger ( si l'outil est payant il y'aura un formulaire pour ça,si l'outil est 
+gratuit il télécharge à condition qu'il déjà créé son compte).
+Le détail dans la barre de menu c'est ça que tu transforme pour le bouton de détails dans l'outil de l'interface 
+du chercheur.
